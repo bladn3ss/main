@@ -1,0 +1,207 @@
+@font-face {
+    font-family: 'XXII Ultimate';
+    src: url('XXII_Ultimate-Black-Metal.ttf') format('truetype'),
+         url('XXII_Ultimate-Black-Metal.woff') format('woff'); /* Добавьте дополнительные форматы, если они есть */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '1';
+    src: url('1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.loader-container {
+    display: flex; /* Используем flexbox для центрирования */
+    align-items: center; /* Вертикальное центрирование */
+    justify-content: center; /* Горизонтальное центрирование */
+    position: relative;
+    width: 100vw; /* Заполняем всю ширину экрана */
+    height: 100vh; /* Заполняем всю высоту экрана */
+}
+
+.loader {
+    border: 10px solid transparent; /* Полностью прозрачный круг */
+    border-top: 10px solid white; /* Белая верхняя часть для эффекта загрузки */
+    border-radius: 50%;
+    width: 150px; /* Размер круга */
+    height: 150px; /* Размер круга */
+    animation: spin 1s linear infinite; /* Анимация вращения */
+}
+
+#loading-text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    text-align: center; /* Центрируем текст */
+    font-family: 'XXII Ultimate', sans-serif; /* Применяем шрифт для текста загрузки */
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#content {
+    opacity: 0; /* Начальная непрозрачность */
+    visibility: hidden; /* Изначально скрыт */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Плавный переход */
+}
+
+#content.visible {
+    opacity: 1; /* Полная непрозрачность */
+    visibility: visible; /* Делаем видимым */
+}
+
+#description p {
+    margin-bottom: 10px; /* Устанавливаем отступ между абзацами */
+}
+
+#description {
+    margin-top: 20px;
+    text-align: center; /* Центрируем текст */
+    font-family: '1', sans-serif; /* Применяем шрифт 1.ttf */
+    font-size: 20px; /* Увеличиваем размер шрифта */
+    line-height: 1; /* Междустрочный интервал для лучшей читаемости */
+}
+
+
+/* Добавляем стиль для абзацев, чтобы уменьшить отступы */
+#description br {
+    margin: 0; /* Убираем отступы для элементов <br> */
+}
+
+
+
+
+#title {
+    margin-top: 20px;
+    font-size: 48px;
+    font-family: 'XXII Ultimate', sans-serif; /* Применяем загруженный шрифт */
+    transition: transform 0.3s;
+    color: #ffffff; /* Цвет заголовка */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 48px;
+    font-family: 'XXII Ultimate', sans-serif; /* Применяем загруженный шрифт */
+    transition: transform 0.3s;
+    color: #ffffff; /* Цвет заголовка */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
+}
+
+#title:hover {
+    transform: scale(1.1);
+}
+
+.icons {
+    display: flex;
+    justify-content: center; /* Центрируем иконки */
+    margin-top: 20px;
+}
+
+.icon {
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px; /* Скругление углов */
+    animation: rainbow-border 3s linear infinite; /* Анимация обводки */
+}
+
+/* Анимация для обводки иконок */
+@keyframes rainbow-border {
+    0% {
+        box-shadow: 0 0 5px red; /* Увеличиваем толщину обводки */
+    }
+    14% {
+        box-shadow: 0 0 5px orange;
+    }
+    28% {
+        box-shadow: 0 0 5px yellow;
+    }
+    42% {
+        box-shadow: 0 0 5px green;
+    }
+    57% {
+        box-shadow: 0 0 5px blue;
+    }
+    71% {
+        box-shadow: 0 0 5px indigo;
+    }
+    85% {
+        box-shadow: 0 0 5px violet;
+    }
+    100% {
+        box-shadow: 0 0 5px red;
+    }
+}
+
+#random-code-container {
+    position: absolute; /* Позволяет располагать контейнер относительно окна */
+    bottom: 0px; /* Отступ от нижней части */
+    right: 20px; /* Отступ от правой части */
+    width: 250px; /* Ширина увеличена на 20 пикселей */
+    height: 100px; /* Устанавливаем фиксированную высоту */
+    display: flex;
+    flex-direction: column; /* Изменяем направление на столбец */
+    align-items: center; /* Центрируем текст по горизонтали */
+    justify-content: center; /* Центрируем текст по вертикали */
+    color: green; /* Цвет текста зеленый */
+    font-family: 'XXII Ultimate', sans-serif; /* Применяем шрифт */
+    font-size: 24px; /* Размер текста */
+    overflow: hidden; /* Убираем скроллинг */
+    white-space: pre-wrap; /* Позволяет тексту переноситься на новую строку */
+    text-align: center; /* Центрируем текст */
+}
+
+#random-code {
+    text-align: center; /* Центрируем текст */
+}
+
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
