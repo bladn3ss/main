@@ -1,54 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=YourFontName&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akaemi</title>
+    <title>Для моего солнца 💖</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="loader-container">
-    <div class="loader"></div>
-    <div id="loading-text" class="blink">...</div>
-</div>
+    <h1>Для моего солнышка)💖</h1>
 
+    <div id="hearts"></div>
 
-<div id="content" style="display:none;">
-    <div id="title">AKAEMI</div>
-    <div class="icons">
-        <img class="icon" src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML">
-        <img class="icon" src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
-        <img class="icon" src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
-        <img class="icon" src="https://img.icons8.com/color/48/000000/python.png" alt="Python">
-    </div>
-    
-    
-    <div id="description">
-        Hello! I am a Frontend Developer (Junior).
-        <br><br>
-        I specialize in creating lightweight projects that enhance user experience.
-        <br><br>
-        My approach is to combine functionality with aesthetics — I strive to create attractive and intuitive interfaces.
-        <br><br>
-        I also develop bots for VKontakte and Discord using Node.js, which allows me to expand my skills and offer more comprehensive solutions to clients.
-        <br><br>
-        I am constantly learning and improving my skills to provide modern solutions and original designs.
-        <br><br>
-        I would be happy to collaborate and work on new projects!
+    <div class="container">
+        <button class="button" onclick="showCompliment()">Нажми меня</button>
+        <div class="compliment-container">
+            <div id="emoji-hearts"></div> 
+            <p id="compliment"></p>
+        </div>
     </div>
 
-    
-    <div class="buttons">
-        <button class="button" onclick="window.open('https://vk.com/akaemisyndicate')">VK</button>
-        <button class="button" onclick="window.open('https://t.me/@AKAEMIS')">TG</button>
-        <button class="button" onclick="window.open('https://discord.com/users/bladn3ssx')">DS</button>
-    </div>
-</div>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
